@@ -11,6 +11,8 @@ This repository contains the supporting files for our CSCE 635 project submissio
 
 ## [C++ Code - `src`](./report)
 
+The souce code was developed for implementation into EMILY's existing platform. The GPID class is a stand alone class that can be utilized for multiple applications. The GPID class can be simply used by generating an object, and then calling the propagate_net method each loop with error and measurement as inputs, respectively. The Control class is an adaptation from the existing Control class to implement the GPID and LOS control algorithms. 
+
 ## [MATLAB and Simulink Code - `sim`](/sim)
 
 The simulations were executed with a proof-of-concept implementation of the GPID algorithm in Python, which can be found in the module [`gradient_tuning.py`](/sim/gradient_tuning.py). The two models [`sim_GPID_LOS.slx`](/sim/sim_GPID_LOS.slx) and [`sim_P_LOS.slx`](/sim/sim_P_LOS.slx) contain the simulation dynamics and **must be executed by running** [`exec_sim_main.m`](/sim/).
