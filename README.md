@@ -7,6 +7,8 @@ This repository contains the supporting files for our CSCE 635 project submissio
 - Jupyter notebooks for data analysis
 - Report in LaTeX
 
+![p-v-gpid](/jupyter/p_v_pidnn.gif)
+
 ## [C++ Code - `src`](./report)
 
 ## [MATLAB and Simulink Code - `sim`](/sim)
