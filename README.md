@@ -11,7 +11,7 @@ This repository contains the supporting files for our CSCE 635 project submissio
 
 ## [C++ Code - `src`](./src)
 
-The souce code was developed for implementation into EMILY's existing platform. The GPID class is a stand alone class that can be utilized for multiple applications. The GPID class can be simply used by generating an object, and then calling the propagate_net method each loop with error and measurement as inputs, respectively. The Control class is an adaptation from the existing Control class to implement the GPID and LOS control algorithms. 
+The souce code was developed for implementation into EMILY's existing platform. The ['GPID'](/src/gpid) class is a stand alone class that can be utilized for multiple applications. The GPID class can be simply used by generating an object, and then calling the propagate_net method each loop with error and measurement as inputs, respectively. The ['Control'](/src/Control) class is an adaptation from the existing Control class to implement the GPID and LOS control algorithms. 
 
 ## [MATLAB and Simulink Code - `sim`](/sim)
 
