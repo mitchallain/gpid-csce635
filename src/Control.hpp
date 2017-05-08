@@ -15,7 +15,7 @@
 #include "gpid.hpp"
 
 
-#define LOS_RADIUS 20.00;
+#define LOS_RADIUS 10.00;
 
 using namespace std;
 
