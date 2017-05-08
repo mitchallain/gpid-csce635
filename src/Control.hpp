@@ -45,9 +45,10 @@ private:
     double e_CTE;
     double Mag_num;
     double Mag_den;
-    vector <double> projection;
+    vector <double> p_ia;
     vector <double> p_b;
     vector <double> p_eb;
+    vector <double> p_ae;
     ////////////////////////
     
     bool pi_bool = 0;

@@ -73,21 +73,23 @@ void Control::get_LOS_vector(double xe, double ye, double xv, double yv, double&
     // Do A projection here before if statement, store p_a
     // implement if wrap for e_CTE<r_LOS
     if (e_CTE <= radius) {
-        // p_b 
-        //projection, A || B = A•B * B/|B|2
-        projection[0] = inner_product(p_ie.begin(), p_ie.end(), p_iv.begin(), 0) * p_iv[0] / pow(Mag_den, 2.0);
-        projection[1] = inner_product(p_ie.begin(), p_ie.end(), p_iv.begin(), 0) * p_iv[1] / pow(Mag_den, 2.0);
-        p_b[0] = projection[0] + p_i[0] + p_iv[0] / Mag_den * sqrt(pow(radius, 2.0) + pow(e_CTE, 2.0));
-        p_b[1] = projection[1] + p_i[1] + p_iv[1] / Mag_den * sqrt(pow(radius, 2.0) + pow(e_CTE, 2.0));
-
+        // p_b
+        //projection, p_ia =  A || B = A•B * B/|B|^2
+        p_ia[0] = inner_product(p_ie.begin(), p_ie.end(), p_iv.begin(), 0) * p_iv[0] / pow(Mag_den, 2.0);
+        p_ia[1] = inner_product(p_ie.begin(), p_ie.end(), p_iv.begin(), 0) * p_iv[1] / pow(Mag_den, 2.0);
+        p_b[0] = p_ia[0] + p_i[0] + p_iv[0] / Mag_den * sqrt(pow(radius, 2.0) + pow(e_CTE, 2.0));
+        p_b[1] = p_ia[1] + p_i[1] + p_iv[1] / Mag_den * sqrt(pow(radius, 2.0) + pow(e_CTE, 2.0));
+        
         // p_eb
         transform(p_b.begin(), p_b.end(), p_e.begin(), p_eb.begin(), minus<double>());
-
+        
         // r_theta
         target_vector = atan2(p_eb[1], p_eb[0]) * 180 / PI; //in degrees
-    } else {
-        // compute p_ea = p_a - p_e, point toward p_ea
-        target_vector = 90 - (atan2(p_eb[1], p_eb[0]) * 180 / PI); //in degrees
+    } else { // emily is further than LOS_radius from the path
+        // compute p_ae = p_ia - p_ie
+        transform(p_ia.begin(), p_ia.end(), p_ie.begin(), p_ae.begin(), minus<double>());
+        
+        target_vector = (atan2(p_ae[1], p_ae[0]) * 180 / PI); //in degrees
     }
 
 }
