@@ -1,0 +1,1 @@
+trias with pos rates (as in Huailin)

@@ -1,0 +1,7 @@
+data 05_07_t1,mem 100 buggy
+data 05_07_t2,mem 100 rates invert buggy
+data 05_07_t3,mem 200 buggy
+data 05_07_t4,mem 200 rates invert buggy
+data 05_07_t5,mem 200 bugs squashed testing for weight convergence
+data 05_07_t6,mem 200 more aggressive learning rates
+data 05_07_t7,mem 200 both P and GPID for comparison structured parameter set

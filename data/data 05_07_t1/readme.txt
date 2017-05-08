@@ -1,0 +1,1 @@
+trials with negative rates (inverted from paper)
