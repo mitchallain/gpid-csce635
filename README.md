@@ -38,6 +38,6 @@ The jupyter notebooks serve to document the analysis and the results in a single
 - [`analysis-final.ipynb`](/jupyter/analysis-final.ipynb), contains comparison of different network parameters and the results of structured trials
 
 ## [LaTeX - `report`](/report)
-The report `.tex` file and supporting figures.
+The [report](/report/p4ml.pdf) and `.tex` file and supporting figures.
 
 
