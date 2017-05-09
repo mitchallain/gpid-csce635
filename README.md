@@ -11,11 +11,11 @@ This repository contains the supporting files for our CSCE 635 project submissio
 
 ## [C++ Code - `src`](./src)
 
-The souce code was developed for implementation into EMILY's existing platform. The ['GPID'](/src/gpid) class is a stand alone class that can be utilized for multiple applications. The GPID class can be simply used by generating an object, and then calling the propagate_net method each loop with error and measurement as inputs, respectively. The GPID class utilizes the ['gpid_setup.txt'](/src/gpid) file to initialize the starting weights, and toggle learning mode on/off. The gpid_setup file is a TAB delimited file, and is structured as follows: 
+The souce code was developed for implementation into EMILY's existing platform. The [`GPID`](/src/gpid) class is a stand alone class that can be utilized for multiple applications. The GPID class can be simply used by generating an object, and then calling the propagate_net method each loop with error and measurement as inputs, respectively. The GPID class utilizes the [`gpid_setup.txt`](/src/gpid) file to initialize the starting weights, and toggle learning mode on/off. The gpid_setup file is a TAB delimited file, and is structured as follows: 
 
-$$\alpha = [training_bool    P_neuron_weight    I_neuron_weight    D_neuron_weight]^T$$
+$$\begin{bmatrix} training_bool & P_neuron_weight & I_neuron_weight & D_neuron_weight \end{bmatrix}$$
 
-The ['Control'](/src/Control) class is an adaptation from the existing Control class to implement the GPID and LOS control algorithms. 
+The [`Control`](/src/Control) class is an adaptation from the existing Control class to implement the GPID and LOS control algorithms. 
 
 ## [MATLAB and Simulink Code - `sim`](/sim)
 
