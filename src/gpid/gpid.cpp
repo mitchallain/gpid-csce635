@@ -153,13 +153,12 @@ void gpid::read_gpid_setup() {
     double P_w, I_w, D_w, o_w;
     fstream myfile("gpid_setup.txt", std::ios_base::in);
 
-    myfile >> train_bool >> P_w >> I_w >> D_w >> o_w;
+    myfile >> train_bool >> P_w >> I_w >> D_w;
     gpid_layer.neurons[0]->weights[0] = P_w;
     gpid_layer.neurons[1]->weights[0] = I_w;
     gpid_layer.neurons[2]->weights[0] = D_w;
-    output_layer.neurons[0]->weights[0] = o_w;
 
-    printf("%d\t%f\t%f\t%f\t%f\n", train_bool, P_w, I_w, D_w, o_w);
+    printf("%d\t%f\t%f\t%f\n", train_bool, P_w, I_w, D_w);
     printf("gpid setup file read\n");
 }
 
